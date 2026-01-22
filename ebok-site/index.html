@@ -1,0 +1,109 @@
+
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <title>คลัง E‑Book สำหรับการเรียนรู้</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ฟอนต์ TH SarabunPSK หากมีในเครื่องจะถูกใช้ -->
+  <style>
+    @font-face{
+      font-family: "TH SarabunPSK";
+      src: local("TH SarabunPSK"), local("THSarabunPSK");
+    }
+    html, body{ font-family: "TH SarabunPSK", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  </style>
+
+  <!-- สไตล์หลัก -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- แถบนำทาง -->
+  <nav class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">📚</span>
+        <strong>คลัง E‑Book</strong>
+      </div>
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" title="สลับโทนสี" aria-label="สลับโทนสี">
+          <!-- ไอคอนดวงจันทร์ -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79Z" stroke="currentColor" stroke-width="1.6"/>
+          </svg>
+        </button>
+        <button id="openPickerBtn" class="btn primary">เปิดหน้าต่างเลือก E‑Book</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero / Banner -->
+  <header class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="gradient"></div>
+      <div class="grid-lights"></div>
+    </div>
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <h1>คลัง E‑Book สำหรับการเรียนรู้</h1>
+        <p>เลือกอ่าน <strong>“E‑Book: วิธีการสร้างเว็บไซต์”</strong> พร้อมปุ่มอ่านออนไลน์และดาวน์โหลด</p>
+        <div class="hero-ctrl">
+          <select id="bookSelect" class="select">
+            <option value="1">E‑Book: วิธีการสร้างเว็บไซต์</option>
+          </select>
+          <a id="previewTop" class="btn soft" href="#" target="_blank" rel="noopener">อ่านออนไลน์</a>
+          <a id="downloadTop" class="btn primary" href="#" target="_blank" rel="noopener">ดาวน์โหลด</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <!-- ปกจำลอง (ถ้าไม่มีภาพจริง) -->
+        <div class="book-mock">
+          <div class="book-cover">
+            <div class="cover-accent"></div>
+            <div class="cover-title">วิธีการสร้างเว็บไซต์</div>
+            <div class="cover-sub">HTML • CSS • JS • Bootstrap</div>
+          </div>
+          <div class="book-shadow"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap main-content">
+    <section>
+      <h2 class="section-title">รายการ E‑Book</h2>
+      <div id="bookList" class="grid"></div>
+    </section>
+  </main>
+
+  <!-- Modal: หน้าต่างเลือก E‑Book -->
+  <div id="pickerModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="pickerTitle">
+      <div class="modal-header">
+        <h3 id="pickerTitle">เลือก E‑Book</h3>
+        <button class="icon-btn" id="closePickerBtn" aria-label="ปิด">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="pickerGrid" class="grid grid-compact"><!-- เติมด้วย JS --></div>
+      </div>
+      <div class="modal-footer">
+        <small>เคล็ดลับ: เพิ่มเล่มใหม่ในอนาคตได้โดยขยายอาเรย์หนังสือใน <code>app.js</code></small>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <small>© 2025 เว็บไซต์ E‑Book: วิธีการสร้างเว็บไซต์ • จัดทำเพื่อการเรียนรู้</small>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
